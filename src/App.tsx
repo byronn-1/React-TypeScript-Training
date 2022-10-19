@@ -2,23 +2,18 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Message } from './Message';
+import Message from './Message';
 
-const initialState = {
-  name: 'Byron',
-  message: 'probably not the way to do it!!!!'
-}
 
-type State = Readonly<typeof initialState>;
 
-class App extends Component<any, State>{
-  readonly state: State = initialState;
+class App extends Component{
+
   render(){
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <Message name={this.state.name} message={this.state.message} />
+          <Message />
         </header>
       </div>
     );
