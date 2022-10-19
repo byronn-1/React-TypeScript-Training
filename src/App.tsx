@@ -4,20 +4,27 @@ import './App.css';
 
 function App() {
 
-  // let firstValue: string = 'Hiya';
-  // let firstValue: number = 23;
-  // let firstValue: boolean = false;
-  // let firstValue: number[] = [1, 2, 3, 4, 5, 6, 7];
-  // OR.......
-  let firstValue: Array<number> = [1, 2, 3, 4, 5, 6, 7];
-  //REMEMBER:  in TS arrays are of object type!
+//tuple
+  let aTuple: [string, number] = ['Byron', 34];
+
+//enum
+  enum Codes { first = 1, second = 2 };
+
+//any
+  let firstName: any = 3;
+
+//void
+  const warning = (): void => {
+    console.log('Warning');
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-        The value { firstValue } is of { typeof firstValue} type!
+        The value { aTuple[0] } is of { typeof aTuple[0]} type!
+        <br />
         </p>
       </header>
     </div>
