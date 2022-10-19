@@ -4,15 +4,21 @@ import './App.css';
 
 import { Message } from './Message';
 
+const initialState = {
+  name: 'Byron',
+  message: 'probably not the way to do it!!!!'
+}
 
-class App extends Component<any>{
+type State = Readonly<typeof initialState>;
 
+class App extends Component<any, State>{
+  readonly state: State = initialState;
   render(){
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <Message name='Byron' message='this is some old message' />
+          <Message name={this.state.name} message={this.state.message} />
         </header>
       </div>
     );
